@@ -3,113 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>대한민국 반도체 기업 소개</title>
+  <title>대한민국 반도체 기업 상세 소개</title>
   <style>
     :root {
       color-scheme: light;
       --bg: #f4efe7;
-      --panel: rgba(255, 255, 255, 0.82);
-      --panel-strong: #ffffff;
+      --panel: rgba(255, 255, 255, 0.9);
       --text: #1f2937;
-      --muted: #6b7280;
+      --muted: #4b5563;
       --accent: #2563eb;
-      --accent-2: #f97316;
-      --accent-3: #10b981;
-      --border: rgba(31, 41, 55, 0.12);
-      --shadow: 0 18px 50px rgba(31, 41, 55, 0.12);
-      --radius: 18px;
+      --border: rgba(0,0,0,0.1);
+      --radius: 20px;
     }
-
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      min-height: 100%;
-      font-family: "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 32%),
-        linear-gradient(180deg, #fcfaf6 0%, var(--bg) 100%);
-    }
-
-    body { padding: 32px 20px 40px; }
-
-    .shell { max-width: 1080px; margin: 0 auto; display: grid; gap: 20px; }
-
-    .hero, .grid > section, .footer {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-      border-radius: var(--radius);
-    }
-
-    .hero { padding: 28px; }
-
-    h1 { margin: 14px 0 10px; font-size: clamp(2rem, 3.4vw, 3.6rem); line-height: 1.05; }
-
-    .lead { color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
-
-    .btn { padding: 12px 16px; border-radius: 14px; font-weight: 700; border: 0; cursor: pointer; transition: transform 160ms ease; }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--accent); color: #fff; }
-
-    .stats { margin-top: 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-
-    .stat { background: var(--panel-strong); border: 1px solid var(--border); border-radius: 16px; padding: 16px; }
-
+    body { font-family: sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; margin: 0; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .hero { background: var(--panel); padding: 40px; border-radius: var(--radius); margin-bottom: 20px; border: 1px solid var(--border); }
+    h1 { margin-top: 0; font-size: 2.5rem; }
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-
-    .panel { padding: 22px; }
-    
-    .chip { padding: 8px 12px; border-radius: 999px; background: rgba(16, 185, 129, 0.1); color: #047857; font-size: 0.9rem; font-weight: 700; margin-right: 8px; }
-
-    .footer { padding: 16px 22px; color: var(--muted); }
+    .panel { background: var(--panel); padding: 30px; border-radius: var(--radius); border: 1px solid var(--border); }
+    h2 { color: var(--accent); }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .chip { display: inline-block; padding: 5px 10px; border-radius: 999px; background: #e5e7eb; font-size: 0.85rem; margin-right: 5px; margin-bottom: 5px; }
   </style>
 </head>
 <body>
-  <main class="shell">
+  <main class="container">
     <section class="hero">
-      <h1>대한민국 반도체 대표 기업</h1>
-      <p class="lead">세계 메모리 반도체 시장을 선도하는 삼성전자와 SK하이닉스에 대해 알아봅니다.</p>
-
-      <div class="stats">
-        <div class="stat">
-          <div class="label">삼성전자</div>
-          <div class="value" id="samsungInfo">메모리 및 파운드리 강자</div>
-        </div>
-        <div class="stat">
-          <div class="label">SK하이닉스</div>
-          <div class="value" id="hynixInfo">HBM 메모리 선두 주자</div>
-        </div>
-      </div>
+      <h1>대한민국 반도체 산업: 삼성전자와 SK하이닉스</h1>
+      <p>한국 경제의 핵심이자, 전 세계 기술 혁신을 주도하는 두 반도체 거인의 전략과 강점을 살펴봅니다.</p>
     </section>
 
     <section class="grid">
-      <section class="panel">
+      <article class="panel">
         <h2>삼성전자 (Samsung Electronics)</h2>
-        <p>종합 반도체 기업으로 DRAM, NAND 플래시 등 메모리 시장 1위이며, 파운드리 사업에서도 세계적인 경쟁력을 갖추고 있습니다.</p>
-        <div style="margin-top: 16px;">
-          <span class="chip">메모리 1위</span>
-          <span class="chip">파운드리</span>
-          <span class="chip">시스템 LSI</span>
+        <p>세계 최대의 종합 반도체 기업으로, 메모리와 비메모리(시스템 반도체)를 아우르는 포트폴리오를 보유하고 있습니다.</p>
+        <h3>주요 강점</h3>
+        <ul>
+          <li><strong>메모리 1위:</strong> DRAM, NAND 플래시 분야에서 수십 년간 압도적인 시장 점유율을 유지 중입니다.</li>
+          <li><strong>파운드리(위탁생산):</strong> 세계 2위 파운드리 업체로, 최첨단 미세공정 기술 개발에 사활을 걸고 있습니다.</li>
+          <li><strong>시스템 LSI:</strong> 모바일 AP(엑시노스), 이미지 센서(아이소셀) 등 독자적인 설계 역량을 갖추고 있습니다.</li>
+        </ul>
+        <div>
+          <span class="chip">DRAM</span><span class="chip">NAND</span><span class="chip">파운드리</span><span class="chip">모바일 AP</span>
         </div>
-      </section>
+      </article>
 
-      <section class="panel">
+      <article class="panel">
         <h2>SK하이닉스 (SK Hynix)</h2>
-        <p>메모리 반도체 전문 기업으로, 특히 인공지능(AI) 시대의 핵심인 HBM(고대역폭 메모리) 분야에서 압도적인 기술력을 보여주고 있습니다.</p>
-        <div style="margin-top: 16px;">
-          <span class="chip">DRAM</span>
-          <span class="chip">NAND</span>
-          <span class="chip">HBM</span>
+        <p>메모리 반도체 전문 기업으로, 특히 AI 시대를 맞이하여 메모리 기술의 한계를 돌파하고 있습니다.</p>
+        <h3>주요 강점</h3>
+        <ul>
+          <li><strong>HBM(고대역폭 메모리):</strong> AI GPU 시장의 폭발적 성장과 함께 필수적인 HBM 시장에서 세계 1위 기술력을 확보했습니다.</li>
+          <li><strong>기술 리더십:</strong> 세계 최고층 낸드플래시 개발 등 고성능 메모리 제품에서 탁월한 성과를 보입니다.</li>
+          <li><strong>AI 가속기 파트너십:</strong> 글로벌 AI 빅테크 기업들과의 긴밀한 기술 협업을 통해 차세대 메모리 규격을 주도합니다.</li>
+        </ul>
+        <div>
+          <span class="chip">DRAM</span><span class="chip">NAND</span><span class="chip">HBM</span><span class="chip">AI 메모리</span>
         </div>
-      </section>
+      </article>
     </section>
-
-    <footer class="footer">
-      데이터 참조: 각사 공시 정보
-    </footer>
   </main>
 </body>
 </html>
