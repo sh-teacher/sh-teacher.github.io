@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AISW 교실</title>
+  <title>대한민국 반도체 기업 소개</title>
   <style>
     :root {
       color-scheme: light;
@@ -20,9 +20,7 @@
       --radius: 18px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html, body {
       margin: 0;
@@ -31,24 +29,14 @@
       color: var(--text);
       background:
         radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 32%),
-        radial-gradient(circle at top right, rgba(249, 115, 22, 0.14), transparent 28%),
         linear-gradient(180deg, #fcfaf6 0%, var(--bg) 100%);
     }
 
-    body {
-      padding: 32px 20px 40px;
-    }
+    body { padding: 32px 20px 40px; }
 
-    .shell {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: grid;
-      gap: 20px;
-    }
+    .shell { max-width: 1080px; margin: 0 auto; display: grid; gap: 20px; }
 
-    .hero,
-    .grid > section,
-    .footer {
+    .hero, .grid > section, .footer {
       background: var(--panel);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
@@ -56,387 +44,72 @@
       border-radius: var(--radius);
     }
 
-    .hero {
-      padding: 28px;
-      overflow: hidden;
-      position: relative;
-    }
+    .hero { padding: 28px; }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto -60px -70px auto;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.18), transparent 70%);
-      pointer-events: none;
-    }
+    h1 { margin: 14px 0 10px; font-size: clamp(2rem, 3.4vw, 3.6rem); line-height: 1.05; }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(37, 99, 235, 0.1);
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.92rem;
-      letter-spacing: 0;
-    }
+    .lead { color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
 
-    h1 {
-      margin: 14px 0 10px;
-      font-size: clamp(2rem, 3.4vw, 3.6rem);
-      line-height: 1.05;
-    }
+    .btn { padding: 12px 16px; border-radius: 14px; font-weight: 700; border: 0; cursor: pointer; transition: transform 160ms ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #fff; }
 
-    .lead {
-      margin: 0;
-      max-width: 62ch;
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
+    .stats { margin-top: 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 
-    .hero-actions {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .stat { background: var(--panel-strong); border: 1px solid var(--border); border-radius: 16px; padding: 16px; }
 
-    button {
-      appearance: none;
-      border: 0;
-      cursor: pointer;
-      font: inherit;
-    }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
-    .btn {
-      padding: 12px 16px;
-      border-radius: 14px;
-      font-weight: 700;
-      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
-    }
+    .panel { padding: 22px; }
+    
+    .chip { padding: 8px 12px; border-radius: 999px; background: rgba(16, 185, 129, 0.1); color: #047857; font-size: 0.9rem; font-weight: 700; margin-right: 8px; }
 
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.24);
-    }
-
-    .btn-secondary {
-      background: rgba(31, 41, 55, 0.06);
-      color: var(--text);
-    }
-
-    .stats {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .stat {
-      background: var(--panel-strong);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 16px;
-    }
-
-    .stat .label {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-    }
-
-    .stat .value {
-      font-size: 1.7rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.95fr;
-      gap: 20px;
-    }
-
-    .panel {
-      padding: 22px;
-    }
-
-    .panel h2 {
-      margin: 0 0 12px;
-      font-size: 1.2rem;
-    }
-
-    .panel p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .chips {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .chip {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(16, 185, 129, 0.1);
-      color: #047857;
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .log {
-      margin-top: 16px;
-      padding: 16px;
-      border-radius: 16px;
-      background: #0f172a;
-      color: #dbeafe;
-      min-height: 170px;
-      display: grid;
-      gap: 8px;
-      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-      font-size: 0.95rem;
-    }
-
-    .log-line {
-      opacity: 0.92;
-    }
-
-    .feed {
-      display: grid;
-      gap: 12px;
-    }
-
-    .item {
-      padding: 14px 16px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid var(--border);
-    }
-
-    .item strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .toolbar {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent-3);
-      box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.12);
-    }
-
-    .footer {
-      padding: 16px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 820px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .footer {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
+    .footer { padding: 16px 22px; color: var(--muted); }
   </style>
 </head>
 <body>
   <main class="shell">
     <section class="hero">
-      <span class="eyebrow">AISW 실습 페이지</span>
-      <h1>HTML, CSS, JS가 한 번에 보이는 작은 테스트 화면</h1>
-      <p class="lead">
-        구조를 조금 더 풍부하게 만들고, 버튼을 누르면 상태와 로그가 바뀌는 방식으로
-        정적 문서와 간단한 인터랙션을 함께 확인할 수 있게 구성했습니다.
-      </p>
-
-      <div class="hero-actions">
-        <button class="btn btn-primary" id="runBtn">실행하기</button>
-        <button class="btn btn-secondary" id="themeBtn">상태 바꾸기</button>
-      </div>
+      <h1>대한민국 반도체 대표 기업</h1>
+      <p class="lead">세계 메모리 반도체 시장을 선도하는 삼성전자와 SK하이닉스에 대해 알아봅니다.</p>
 
       <div class="stats">
         <div class="stat">
-          <div class="label">현재 모드</div>
-          <div class="value" id="modeText">기본</div>
+          <div class="label">삼성전자</div>
+          <div class="value" id="samsungInfo">메모리 및 파운드리 강자</div>
         </div>
         <div class="stat">
-          <div class="label">클릭 횟수</div>
-          <div class="value" id="countText">0</div>
-        </div>
-        <div class="stat">
-          <div class="label">메시지</div>
-          <div class="value" id="statusText">대기 중</div>
+          <div class="label">SK하이닉스</div>
+          <div class="value" id="hynixInfo">HBM 메모리 선두 주자</div>
         </div>
       </div>
     </section>
 
     <section class="grid">
       <section class="panel">
-        <div class="badge"><span class="dot"></span> 실시간 로그</div>
-        <h2>이벤트가 눈에 보이도록</h2>
-        <p>
-          버튼을 누를 때마다 로그가 쌓이고, 화면에 표시되는 값도 함께 바뀝니다.
-          테스트용 페이지에서 자주 쓰는 패턴을 한 화면에 모아두었습니다.
-        </p>
-
-        <div class="log" id="logBox" aria-live="polite">
-          <div class="log-line">[init] 페이지가 준비되었습니다.</div>
-          <div class="log-line">[ui] 버튼을 눌러 동작을 확인해 보세요.</div>
+        <h2>삼성전자 (Samsung Electronics)</h2>
+        <p>종합 반도체 기업으로 DRAM, NAND 플래시 등 메모리 시장 1위이며, 파운드리 사업에서도 세계적인 경쟁력을 갖추고 있습니다.</p>
+        <div style="margin-top: 16px;">
+          <span class="chip">메모리 1위</span>
+          <span class="chip">파운드리</span>
+          <span class="chip">시스템 LSI</span>
         </div>
       </section>
 
       <section class="panel">
-        <h2>학습 포인트</h2>
-        <p>한 파일 안에서 HTML 구조, CSS 레이아웃, JS 이벤트를 같이 확인할 수 있습니다.</p>
-
-        <div class="chips">
-          <span class="chip">반응형 레이아웃</span>
-          <span class="chip">상태 변경</span>
-          <span class="chip">로그 출력</span>
-          <span class="chip">버튼 인터랙션</span>
-        </div>
-
-        <div class="toolbar">
-          <button class="btn btn-secondary" id="resetBtn">초기화</button>
-          <button class="btn btn-secondary" id="addLineBtn">로그 추가</button>
-        </div>
-
-        <div class="feed" style="margin-top: 18px;">
-          <div class="item">
-            <strong>HTML</strong>
-            제목, 설명, 통계, 패널 구조를 사용해 페이지의 뼈대를 잡았습니다.
-          </div>
-          <div class="item">
-            <strong>CSS</strong>
-            그라데이션 배경, 카드형 패널, 반응형 그리드를 넣어 시각적으로 풍부하게 만들었습니다.
-          </div>
-          <div class="item">
-            <strong>JS</strong>
-            클릭 이벤트로 숫자, 문구, 로그가 바뀌는 간단한 동작을 넣었습니다.
-          </div>
+        <h2>SK하이닉스 (SK Hynix)</h2>
+        <p>메모리 반도체 전문 기업으로, 특히 인공지능(AI) 시대의 핵심인 HBM(고대역폭 메모리) 분야에서 압도적인 기술력을 보여주고 있습니다.</p>
+        <div style="margin-top: 16px;">
+          <span class="chip">DRAM</span>
+          <span class="chip">NAND</span>
+          <span class="chip">HBM</span>
         </div>
       </section>
     </section>
 
     <footer class="footer">
-      <span>테스트용 단일 페이지</span>
-      <span id="timeText">마지막 갱신: -</span>
+      데이터 참조: 각사 공시 정보
     </footer>
   </main>
-
-  <script>
-    const modeText = document.getElementById('modeText');
-    const countText = document.getElementById('countText');
-    const statusText = document.getElementById('statusText');
-    const logBox = document.getElementById('logBox');
-    const timeText = document.getElementById('timeText');
-
-    const runBtn = document.getElementById('runBtn');
-    const themeBtn = document.getElementById('themeBtn');
-    const resetBtn = document.getElementById('resetBtn');
-    const addLineBtn = document.getElementById('addLineBtn');
-
-    let count = 0;
-    let mode = '기본';
-    let sequence = 0;
-
-    function stamp() {
-      const now = new Date();
-      return now.toLocaleTimeString('ko-KR', {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-      });
-    }
-
-    function pushLog(message) {
-      const line = document.createElement('div');
-      line.className = 'log-line';
-      line.textContent = `[${stamp()}] ${message}`;
-      logBox.prepend(line);
-    }
-
-    function sync() {
-      modeText.textContent = mode;
-      countText.textContent = count;
-      statusText.textContent = count === 0 ? '대기 중' : '동작 확인 완료';
-      timeText.textContent = `마지막 갱신: ${stamp()}`;
-    }
-
-    runBtn.addEventListener('click', () => {
-      count += 1;
-      sequence += 1;
-      mode = '실행 중';
-      sync();
-      pushLog(`실행 버튼이 눌렸습니다. step=${sequence}`);
-    });
-
-    themeBtn.addEventListener('click', () => {
-      mode = mode === '기본' ? '집중 모드' : mode === '집중 모드' ? '실험 모드' : '기본';
-      sync();
-      pushLog(`상태가 ${mode}로 바뀌었습니다.`);
-    });
-
-    addLineBtn.addEventListener('click', () => {
-      sequence += 1;
-      pushLog(`추가 로그 ${sequence}가 생성되었습니다.`);
-    });
-
-    resetBtn.addEventListener('click', () => {
-      count = 0;
-      sequence = 0;
-      mode = '기본';
-      logBox.innerHTML = `
-        <div class="log-line">[reset] 화면이 초기화되었습니다.</div>
-        <div class="log-line">[init] 다시 시작할 준비가 되었습니다.</div>
-      `;
-      sync();
-    });
-
-    sync();
-  </script>
 </body>
 </html>
